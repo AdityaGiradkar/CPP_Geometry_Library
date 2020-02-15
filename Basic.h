@@ -1,7 +1,7 @@
 
 #include<math.h>
 
-class Point
+class Point          //Class for point
 {
 public:
     float x,y,z;
