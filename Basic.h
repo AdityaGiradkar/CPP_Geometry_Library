@@ -1,5 +1,11 @@
 #include<math.h>
 #include<iostream>
+#define x1 p1.x
+#define x2 p2.x
+#define x3 p3.x
+#define y1 p1.x
+#define y2 p2.x
+#define y3 p3.x
 using namespace std;
 class Point          //Class for point
 {
@@ -84,6 +90,8 @@ public:
     p.y=(p1.y+p2.y+p3.y)/3;
     return p;
     }
+
+
 };
 
 ostream & operator<<(ostream &out,const Point &p){
