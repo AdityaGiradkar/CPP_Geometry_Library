@@ -1,11 +1,6 @@
 #include<math.h>
 #include<iostream>
-#define x1 p1.x
-#define x2 p2.x
-#define x3 p3.x
-#define y1 p1.x
-#define y2 p2.x
-#define y3 p3.x
+
 using namespace std;
 class Point          //Class for point
 {
@@ -76,27 +71,34 @@ public:
     float area()
     {
         float a=0.5*(p1.x*(p2.y-p3.y)+p2.x*(p3.y-p1.y)+p3.x*(p1.y-p2.y));
-        if(a<0){
-        return -a;}
+        if(a<0)
+        {
+            return -a;
+        }
         return a;
     }
 
-    float perimeter(){
-    return Distance(p1,p2)+Distance(p2,p3)+Distance(p1,p3);}
+    float perimeter()
+    {
+        return Distance(p1,p2)+Distance(p2,p3)+Distance(p1,p3);
+    }
 
-    Point centroid(){
-    Point p;
-    p.x=(p1.x+p2.x+p3.x)/3;
-    p.y=(p1.y+p2.y+p3.y)/3;
-    return p;
+    Point centroid()
+    {
+        Point p;
+        p.x=(p1.x+p2.x+p3.x)/3;
+        p.y=(p1.y+p2.y+p3.y)/3;
+        return p;
     }
 
 
 };
 
-ostream & operator<<(ostream &out,const Point &p){
+ostream & operator<<(ostream &out,const Point &p)
+{
     out<<"("<<p.x<<","<<p.y<<")";
-    return out;}
+    return out;
+}
 
 
 
