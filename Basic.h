@@ -1,5 +1,6 @@
 #include<math.h>
 #include<iostream>
+#include<bits/stdc++.h>
 
 using namespace std;
 class Point          //Class for point
@@ -93,6 +94,62 @@ public:
 
 
 };
+
+class Line
+{
+public:
+    float slope,y_intercept;
+
+    Line(float slope,float y_intercept)         //Line with slope and y intercept given
+    {
+        this->slope=slope;
+        this->y_intercept=y_intercept;
+    }
+
+    Line(Point p1,Point p2)                     //Line passing through 2 points
+    {
+        this->slope=(p2.y-p1.y)/(p2.x-p1.x);
+        this->y_intercept=p2.y-slope*p2.x;
+    }
+
+    int sign_line(Point p)
+    {
+        //If y-mx-c>0 returns 1,y-mx-c<0 returns -1,y-mx-c=0 i.e Point p on line--->returns 0
+        float z;
+        z=p.y-slope*p.x-y_intercept;
+        if(z>0)
+        {
+            return 1;
+        }
+        if(z<0)
+        {
+            return -1;
+        }
+        return 0;
+    }
+
+};
+
+/*
+vector<Point> convexHull(Point p[],int n){
+vector<Point> hull;
+
+for(int i=0;i<n;i++){
+for(int j=0;j<n;j++){
+if(i!=j){
+set<int> s;
+Line l(p[i],p[j]);
+for(int k=0;k<n;k++){
+s.insert(l.sign_line(p[k]));}
+if(s.size()){
+if(find(hull.begin(),hull.end(),p[i])!=hull.end()){
+hull.push_back(p[i]);}
+if(find(hull.begin(),hull.end(),p[j])!=hull.end()){
+hull.push_back(p[j]);}}}}
+
+return hull;}}
+
+*/
 
 ostream & operator<<(ostream &out,const Point &p)
 {

@@ -1,6 +1,7 @@
 #include"Basic.h"
 #include"2DPhysics.h"
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -19,4 +20,11 @@ int main()
     r1.setPosition(6,4,-8);
     cout<<r1.calculatePosition(5)<<endl;
     cout<<r1.calculateKE();
+    set<int> s;
+    s.insert(5);
+    cout<<*s.begin()<<endl;
+    Line l1(p2,p3);
+    cout<<l1.sign_line(p1);
+
+
 }
