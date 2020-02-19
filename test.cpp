@@ -15,6 +15,8 @@ int main()
     cout<<CentreOfMass(r,4)<<endl;
     r1.setVelocity(1,1,1);
     r1.setAccleration(1,1,1);
+    r1.setPosition(9,6,5);
     r1.setPosition(6,4,-8);
-    cout<<r1.calculatePosition(5);
+    cout<<r1.calculatePosition(5)<<endl;
+    cout<<r1.calculateKE();
 }

@@ -38,6 +38,11 @@ public:
         vx=vy=vz=0;
         ax=ay=az=0;
     }
+
+    void setMass(float m)
+    {
+        mass=m;
+    }
     void setPosition(float x, float y,float z=0)
     {
         position.x=x;
@@ -68,9 +73,14 @@ public:
         return p;
     }
 
+    float calculateKE()     //Kinetic energy calculation
+    {
+        return 0.5*mass*(pow(vx,2)+pow(vy,2)+pow(vz,2));
+    }
+
 };
 
-Point CentreOfMass(RigidBody r[],int n)
+Point CentreOfMass(RigidBody r[],int n)                 //Calculate Centre of Mass of group of rigid bodies
 {
     Point com;
     float s=0,m=0;
